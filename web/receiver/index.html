@@ -1,46 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
-    <!-- Cast Debug Logger -->
-    <script src="//www.gstatic.com/cast/sdk/libs/devtools/debug_layer/caf_receiver_logger.js"></script>
-  </head>
+  <head> </head>
   <body>
     <script>
-      const context = cast.framework.CastReceiverContext.getInstance();
-
-      const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
-      const LOG_RECEIVER_TAG = "Receiver";
-
-      castDebugLogger.loggerLevelByEvents = {
-        "cast.framework.events.category.CORE": cast.framework.LoggerLevel.INFO,
-        "cast.framework.events.EventType.MEDIA_STATUS":
-          cast.framework.LoggerLevel.DEBUG,
-      };
-
-      if (!castDebugLogger.loggerLevelByTags) {
-        castDebugLogger.loggerLevelByTags = {};
-      }
-
-      castDebugLogger.loggerLevelByTags[LOG_RECEIVER_TAG] =
-        cast.framework.LoggerLevel.DEBUG;
-
-      castDebugLogger.info(LOG_RECEIVER_TAG, `Debug logger works !!!`);
-
-      const castReceiverOptions = new cast.framework.CastReceiverOptions();
-
-      const playbackConfig = new cast.framework.PlaybackConfig();
-      castReceiverOptions.playbackConfig = playbackConfig;
-
-      context.start(castReceiverOptions);
-
       window.location.href = "http://192.168.88.30:1780/#autoplay";
     </script>
-
-    <audio
-      autoplay
-      controls
-      src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
-    ></audio>
   </body>
 </html>
