@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "chromecast-snapcast"
+version = "0.1.0"
+description = ""
+authors = ["Jan Kaifer <jan@kaifer.cz>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pychromecast = "^13.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
