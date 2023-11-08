@@ -6,7 +6,7 @@ print("Searching for chromecasts on local network ...")
 chromecasts, browser = pychromecast.get_chromecasts()
 
 # don't show groups, we wan't to control individual speakers ourself
-chromecasts = filter(lambda cc: cc.cast_type != pychromecast.CAST_TYPE_GROUP, chromecasts)
+chromecasts = list(filter(lambda cc: cc.cast_type != 'group', chromecasts))
 
 print("We have found these:")
 for i, cc in enumerate(chromecasts):
