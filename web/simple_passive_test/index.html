@@ -1,45 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
-    <script src="//www.gstatic.com/cast/sdk/libs/devtools/debug_layer/caf_receiver_logger.js"></script>
-  </head>
+  <head> </head>
   <body>
-    <h1 style="z-index: 1000; background: white; position: fixed">
-      This is chromecast test app
-    </h1>
-    <video
-      id="player"
-      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/BigBuckBunny.mp4"
-      autoplay
-    ></video>
     <script>
-      document.getElementById("player").play();
-    </script>
-    <script>
-      const context = cast.framework.CastReceiverContext.getInstance();
-      const playerManager = context.getPlayerManager();
-
-      context.start();
-
-      const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
-      const LOG_TAG = "Snapcast.LOG";
-
-      // Enable debug logger and show a 'DEBUG MODE' overlay at top left corner.
-      context.addEventListener(cast.framework.system.EventType.READY, () => {
-        if (!castDebugLogger.debugOverlayElement_) {
-          castDebugLogger.setEnabled(true);
-
-          // Show debug overlay.
-          castDebugLogger.showDebugLogs(true);
-
-          // Clear log messages on debug overlay.
-          // castDebugLogger.clearDebugLogs();
-        }
-
-        console.log("console.log");
-        castDebugLogger.error(LOG_TAG, "cast context with logging is setup");
-      });
+      window.location.href = "https://snapcast-oldbox.kaifer.cz/#autoplay";
     </script>
   </body>
 </html>
