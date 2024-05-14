@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <script src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+    <script src="//www.gstatic.com/cast/sdk/libs/devtools/debug_layer/caf_receiver_logger.js"></script>
   </head>
   <body>
     <h1 style="z-index: 1000; background: white; position: fixed">
@@ -13,6 +14,9 @@
       const playerManager = context.getPlayerManager();
 
       context.start();
+
+      const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
+      const LOG_TAG = "Snapcast.LOG";
 
       // Enable debug logger and show a 'DEBUG MODE' overlay at top left corner.
       context.addEventListener(cast.framework.system.EventType.READY, () => {
@@ -26,6 +30,8 @@
           // castDebugLogger.clearDebugLogs();
         }
       });
+
+      castDebugLogger.error(LOG_TAG, "cast context with logging is setup");
     </script>
   </body>
 </html>
