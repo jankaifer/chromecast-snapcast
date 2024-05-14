@@ -13,6 +13,19 @@
       const playerManager = context.getPlayerManager();
 
       context.start();
+
+      // Enable debug logger and show a 'DEBUG MODE' overlay at top left corner.
+      context.addEventListener(cast.framework.system.EventType.READY, () => {
+        if (!castDebugLogger.debugOverlayElement_) {
+          castDebugLogger.setEnabled(true);
+
+          // Show debug overlay.
+          castDebugLogger.showDebugLogs(true);
+
+          // Clear log messages on debug overlay.
+          // castDebugLogger.clearDebugLogs();
+        }
+      });
     </script>
   </body>
 </html>
