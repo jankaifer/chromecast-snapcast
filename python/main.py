@@ -1,6 +1,8 @@
 import pychromecast
+import time
 
 APP_ID="1F35E02D"
+# APP_ID="CC1AD845"
 
 print("Searching for chromecasts on local network ...")
 chromecasts, browser = pychromecast.get_chromecasts()
@@ -14,14 +16,21 @@ for i, cc in enumerate(chromecasts):
     print(f"{i}. {cc.name}")
 
 print()
-cast = chromecasts[int(input("Pick one: "))]
+# idx = int(input("Pick one: "))
+idx = 2
+cast = chromecasts[idx]
 
 print(f'Connecting to {cast.name} ...')
 cast.wait()
 browser.stop_discovery()
+print("status", cast.status)
 
 print(f'Running snapcast on {cast.name} ...')
+# cast.start_app(APP_ID)
 cast.start_app(APP_ID)
-cast.wait()
+
+time.sleep(2)
+
 print(f'{cast.name} currently has app {cast.app_display_name} with id {cast.app_id}')
+print("status", cast.status)
 print("Completed.")
