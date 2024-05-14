@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <h1>This is chromecast test app</h1>
+    <script>
+      window["__onGCastApiAvailable"] = function (isAvailable) {
+        if (isAvailable) {
+          cast.framework.CastContext.getInstance().setOptions({
+            receiverApplicationId: "1F35E02D",
+            autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED,
+          });
+        }
+      };
+    </script>
+    <script src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+  </body>
+</html>
