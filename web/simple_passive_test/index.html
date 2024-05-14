@@ -8,7 +8,11 @@
     <h1 style="z-index: 1000; background: white; position: fixed">
       This is chromecast test app
     </h1>
-    <cast-media-player></cast-media-player>
+    <video
+      id="player"
+      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/BigBuckBunny.mp4"
+      autoplay
+    ></video>
     <script>
       const context = cast.framework.CastReceiverContext.getInstance();
       const playerManager = context.getPlayerManager();
